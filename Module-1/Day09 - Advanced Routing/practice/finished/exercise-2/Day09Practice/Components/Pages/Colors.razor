@@ -1,0 +1,58 @@
+@* Practice 2: {*slug} is a CATCH-ALL — the star is what makes it capture the whole
+   remaining path as one string, slashes included. A single-segment {slug} would stop
+   at the first "/".
+
+   ONE directive is all this page needs. A catch-all also matches ZERO segments, so the
+   bare "/colors" lands here too, with Slug == null — which is exactly why Slug is
+   declared string? below. Do not add a second @page "/colors"; it is redundant. *@
+@page "/colors/{*slug}"
+
+<h3>Colors</h3>
+
+@if (string.IsNullOrEmpty(Slug) || Slug == "index")
+{
+    <h4>Available Colors</h4>
+    <ul class="list-group">
+        @foreach (var color in _knownColors)
+        {
+            <li class="list-group-item">
+                <a href="/colors/@color.Key">@color.Key</a> -- <code>@color.Value</code>
+            </li>
+        }
+    </ul>
+}
+else if (_knownColors.TryGetValue(Slug, out var hex))
+{
+    <h4>@Slug</h4>
+    <p>Hex code: <code>@hex</code></p>
+    <div style="width: 120px; height: 120px; border: 1px solid #333; background-color: @hex;"></div>
+    <a href="/colors" class="btn btn-outline-primary mt-3">Back to All Colors</a>
+}
+else
+{
+    <div class="alert alert-warning">
+        <h4>Color Not Found</h4>
+        <p>No color matches <code>@Slug</code>.</p>
+        <p>
+            Look at the value above. The catch-all captured the <em>whole</em> path as one
+            string. A plain <code>{slug}</code> would not have matched a multi-segment URL
+            like <code>/colors/red/dark</code> at all -- you would have landed on the 404
+            page you built in Practice 1 instead of on this page.
+        </p>
+        <a href="/colors" class="btn btn-primary">View All Colors</a>
+    </div>
+}
+
+@code {
+    [Parameter] public string? Slug { get; set; }
+
+    // PRE-BUILT — not part of the exercise.
+    // This dictionary stands in for a database lookup. A real app would query a table
+    // of colors here. The KEY is the slug taken from the URL; the VALUE is the hex code.
+    private readonly Dictionary<string, string> _knownColors = new(StringComparer.OrdinalIgnoreCase)
+    {
+        ["red"] = "#FF0000",
+        ["green"] = "#00FF00",
+        ["blue"] = "#0000FF"
+    };
+}

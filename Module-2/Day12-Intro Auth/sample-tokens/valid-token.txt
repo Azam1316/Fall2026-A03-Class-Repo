@@ -1,0 +1,45 @@
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im5haXQtZGVtby1rZXktMSJ9.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MzAwLyIsInN1YiI6IjlmM2MxYTdlLTViMjgtNGQ2YS04ZTE0LWMwN2IyZjlkM2E1MSIsImF1ZCI6Imh0dHBzOi8vYXBpLmNhbXB1cy1zdG9yZS5jb20iLCJpYXQiOjE3ODk1NjAwMDAsImV4cCI6MTc4OTU2MzYwMCwibmFtZSI6IkphbmUgU21pdGgiLCJlbWFpbCI6ImphbmUuc21pdGhAbmFpdC5jYSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJodHRwczovL2NhbXB1cy1zdG9yZS5jb20vY2xhaW1zL3JvbGVzIjpbIlN0YWZmIiwiSW52ZW50b3J5Il0sImh0dHBzOi8vY2FtcHVzLXN0b3JlLmNvbS9jbGFpbXMvZGVwYXJ0bWVudCI6IlNvZnR3YXJlIERldmVsb3BtZW50IiwiaHR0cHM6Ly9jYW1wdXMtc3RvcmUuY29tL2NsYWltcy9zdHVkZW50X2lkIjoiMjAwNDEyMzQ1In0.SAMPLE_SIGNATURE_NOT_VALID_FOR_VERIFICATION
+
+---
+DECODED REFERENCE (for instructor preparation -- students decode this at jwt.io)
+
+HEADER:
+{
+  "alg": "RS256",
+  "typ": "JWT",
+  "kid": "nait-demo-key-1"
+}
+
+PAYLOAD:
+{
+  "iss": "https://localhost:7300/",
+  "sub": "9f3c1a7e-5b28-4d6a-8e14-c07b2f9d3a51",
+  "aud": "https://api.campus-store.com",
+  "iat": 1789560000,
+  "exp": 1789563600,
+  "name": "Jane Smith",
+  "email": "jane.smith@nait.ca",
+  "email_verified": true,
+  "https://campus-store.com/claims/roles": ["Staff", "Inventory"],
+  "https://campus-store.com/claims/department": "Software Development",
+  "https://campus-store.com/claims/student_id": "200412345"
+}
+
+NOTES:
+- iat (issued at): 1789560000 = 2026-09-16 12:00:00 UTC (during Fall 2026 semester)
+- exp (expires):   1789563600 = 2026-09-16 13:00:00 UTC (1 hour lifetime)
+- jwt.io displays timestamps in YOUR LOCAL timezone -- the dates above are UTC
+- Custom claims use namespace URI (https://campus-store.com/claims/) per the OIDC namespacing convention
+- BY DESIGN: iss is the CampusHub AuthServer while aud and the custom claims are campus-store's.
+  That pairing is not a mistake and must not be "made consistent". It is how OIDC really works:
+  ONE identity provider issues tokens for MANY applications, and custom claims are namespaced by
+  the application that defines them -- so a token issued by our provider FOR the campus-store app
+  correctly carries campus-store-namespaced claims. Seed/Clients.cs:43 configures the LESSON DEMO
+  client only; it is not a claim that the AuthServer can emit just one namespace.
+  Three namespaces coexist across Module 2 on purpose (this one, sdev2351.example.com/roles in the
+  Day-12 primer and Day 16, campushub-api/roles in Lab 2). Seeing more than one is the point: the
+  namespace is arbitrary, and the transferable skill is making RoleClaimType name whatever YOUR
+  provider actually emits. Unifying them is a separate parked decision -- see the same note in
+  Day-16/Student-Reference/esl-changelog.md. Adjudicated Session 689.
+- Signature is a placeholder -- jwt.io will show "Invalid Signature" (expected for demo tokens)
+- To paste into jwt.io: copy ONLY the first line (the encoded token string, before the --- separator)

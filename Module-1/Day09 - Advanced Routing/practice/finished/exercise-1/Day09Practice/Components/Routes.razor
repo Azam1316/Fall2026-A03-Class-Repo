@@ -1,0 +1,15 @@
+@* Practice 1: you might expect a <NotFound> template here — there isn't one, and adding one
+   would do nothing. In a Blazor Web App it compiles and never fires, on either render pass.
+   It is dead code kept for backward compatibility only.
+   NotFoundPage is what replaces it, and the fallback route needs it. The middleware in
+   Program.cs (UseStatusCodePagesWithReExecute) fixes the SERVER pass — it re-runs the
+   pipeline against /not-found and keeps the 404 status. But the Blazor circuit then connects
+   and re-runs this router against the URL the user actually typed (/nonexistent), which still
+   matches nothing. NotFoundPage names the page it renders. Without it, Blazor's bare
+   "Not found" overwrites the styled page a moment after it appears. *@
+<Router AppAssembly="typeof(Program).Assembly" NotFoundPage="typeof(Pages.NotFound)">
+    <Found Context="routeData">
+        <RouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)" />
+        <FocusOnNavigate RouteData="routeData" Selector="h1" />
+    </Found>
+</Router>

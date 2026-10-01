@@ -1,0 +1,60 @@
+@inherits LayoutComponentBase
+@implements IDisposable
+@using Fluxor
+@using Day08Practice.Features.RecentlyViewed.Store
+@inject IState<RecentlyViewedState> RecentlyViewedState
+@inject IDispatcher Dispatcher
+
+<div class="container mt-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 rounded">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Day 8 Practice</a>
+            <div class="navbar-nav">
+                <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">Home</NavLink>
+                <NavLink class="nav-link" href="/shop">
+                    Shop (Recently viewed: @RecentlyViewedState.Value.Items.Count)
+                </NavLink>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        @Body
+    </main>
+</div>
+
+@code {
+    // PRE-BUILT plumbing: a layout inherits LayoutComponentBase (for @Body), so unlike a
+    // FluxorComponent it does NOT auto-subscribe to Fluxor state. We subscribe manually so
+    // the navbar "Recently viewed" count re-renders whenever the state changes (view + hydrate).
+    protected override void OnInitialized() =>
+        RecentlyViewedState.StateChanged += OnRecentlyViewedChanged;
+
+    private void OnRecentlyViewedChanged(object? sender, EventArgs e) =>
+        InvokeAsync(StateHasChanged);
+
+    public void Dispose() =>
+        RecentlyViewedState.StateChanged -= OnRecentlyViewedChanged;
+
+    // Practice 1 Solution: trigger rehydration once, on first render.
+    //
+    // Use OnAfterRenderAsync(firstRender), not OnInitialized. With prerendering this component
+    // is created TWICE -- once on the server for the prerender pass (no browser, so no JS
+    // interop and no localStorage) and again once the circuit connects. OnInitialized runs in
+    // BOTH; OnAfterRenderAsync only in the live one, and firstRender makes it fire exactly once.
+    //
+    // Calling ILocalStorageService DIRECTLY from OnInitialized throws on the prerender pass.
+    // Ours is read inside a Fluxor effect instead, and the store is not running during
+    // prerender, so a dispatch from OnInitialized is quietly dropped rather than throwing -- it
+    // would still work, but only by falling through to the second OnInitialized. This is the
+    // placement that is right on purpose, not by accident.
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            Dispatcher.Dispatch(new HydrateRecentlyViewedRequestAction());
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
+    }
+}

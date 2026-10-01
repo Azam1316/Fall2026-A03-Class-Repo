@@ -1,0 +1,14 @@
+@* Practice 1: the fallback page. This is an ordinary routed page, NOT a <Router> template.
+   UseStatusCodePagesWithReExecute in Program.cs re-runs the pipeline against this URL whenever
+   routing finds no endpoint for what the user typed, keeping the 404 status code.
+   Because it's a normal page, it picks up MainLayout from DefaultLayout — the navbar comes
+   along for free, and no <LayoutView> wrapper is needed. *@
+@page "/not-found"
+
+<PageTitle>Page Not Found</PageTitle>
+
+<div class="alert alert-warning mt-4">
+    <h3>Page Not Found</h3>
+    <p>The page you requested does not exist.</p>
+    <a href="/" class="btn btn-primary">Go Home</a>
+</div>

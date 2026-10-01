@@ -1,0 +1,47 @@
+ORIGINAL -- paste this line into jwt.io first:
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30
+
+TAMPERED -- then replace it with this line:
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkhhY2tlciIsImFkbWluIjp0cnVlLCJpYXQiOjE1MTYyMzkwMjJ9.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30
+---
+TAMPER TEST REFERENCE (for the jwt.io demo Step 3 and the worksheet Bonus)
+
+SECRET (HS256): a-string-secret-at-least-256-bits-long
+  jwt.io fills this into the "Secret" box by default. If the box is empty, type it in.
+
+WHAT YOU SEE AT jwt.io:
+  ORIGINAL -> "Signature Verified"
+  TAMPERED -> "Invalid Signature" (and "signature verification failed" under the Secret box)
+
+WHAT CHANGED:
+  Only the middle section (the payload). "name" changed from "John Doe" to "Hacker".
+  The header and the signature are byte-for-byte identical in both lines.
+  The signature was computed over the ORIGINAL header + payload, so it no longer matches.
+
+ORIGINAL PAYLOAD:
+{
+  "sub": "1234567890",
+  "name": "John Doe",
+  "admin": true,
+  "iat": 1516239022
+}
+
+TAMPERED PAYLOAD:
+{
+  "sub": "1234567890",
+  "name": "Hacker",
+  "admin": true,
+  "iat": 1516239022
+}
+
+NOTES:
+- ORIGINAL is jwt.io's own example token. It uses HS256 (a shared secret) so jwt.io can verify it
+  in the browser with no key download.
+- Why not tamper valid-token.txt? That token is RS256 with a placeholder signature
+  (SAMPLE_SIGNATURE_NOT_VALID_FOR_VERIFICATION) and no published public key. jwt.io cannot verify
+  it at all -- it shows "Unable to automatically download public key" -- so there is no
+  "verified" state to break.
+- jwt.io's decoder does not let you edit the decoded payload. The JWT Encoder tab builds a NEW
+  token and signs it again, so it cannot show tampering. Pasting a pre-built tampered token is the
+  way to show it.
+- Verified against live jwt.io on 2026-09-29.

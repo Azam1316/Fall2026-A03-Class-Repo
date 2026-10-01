@@ -1,0 +1,8 @@
+@page "/docs/{*slug}"
+
+<h3>Documentation</h3>
+<p>Requested: <code>@Slug</code></p>
+
+@code {
+    [Parameter] public string? Slug { get; set; }
+}

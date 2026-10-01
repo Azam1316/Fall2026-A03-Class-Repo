@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "98ueBXYES38=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Day07Demo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jkarpiak.NAIT\\.nuget\\packages\\bysresults\\1.2.3\\bysresults.1.2.3.nupkg.sha512",
+    "C:\\Users\\jkarpiak.NAIT\\.nuget\\packages\\fluxor\\6.0.0\\fluxor.6.0.0.nupkg.sha512",
+    "C:\\Users\\jkarpiak.NAIT\\.nuget\\packages\\fluxor.blazor.web\\6.0.0\\fluxor.blazor.web.6.0.0.nupkg.sha512",
+    "C:\\Users\\jkarpiak.NAIT\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.12\\microsoft.aspnetcore.app.internal.assets.10.0.12.nupkg.sha512"
+  ],
+  "logs": []
+}

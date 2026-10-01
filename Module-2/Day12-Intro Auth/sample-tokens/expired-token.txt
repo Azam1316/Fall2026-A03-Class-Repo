@@ -1,0 +1,34 @@
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im5haXQtZGVtby1rZXktMSJ9.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MzAwLyIsInN1YiI6IjlmM2MxYTdlLTViMjgtNGQ2YS04ZTE0LWMwN2IyZjlkM2E1MSIsImF1ZCI6Imh0dHBzOi8vYXBpLmNhbXB1cy1zdG9yZS5jb20iLCJpYXQiOjE3MDUzMjAwMDAsImV4cCI6MTcwNTMyMzYwMCwibmFtZSI6IkphbmUgU21pdGgiLCJlbWFpbCI6ImphbmUuc21pdGhAbmFpdC5jYSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJodHRwczovL2NhbXB1cy1zdG9yZS5jb20vY2xhaW1zL3JvbGVzIjpbIlN0YWZmIiwiSW52ZW50b3J5Il0sImh0dHBzOi8vY2FtcHVzLXN0b3JlLmNvbS9jbGFpbXMvZGVwYXJ0bWVudCI6IlNvZnR3YXJlIERldmVsb3BtZW50IiwiaHR0cHM6Ly9jYW1wdXMtc3RvcmUuY29tL2NsYWltcy9zdHVkZW50X2lkIjoiMjAwNDEyMzQ1In0.SAMPLE_SIGNATURE_NOT_VALID_FOR_VERIFICATION
+
+---
+DECODED REFERENCE (for instructor preparation -- students decode this at jwt.io)
+
+HEADER:
+{
+  "alg": "RS256",
+  "typ": "JWT",
+  "kid": "nait-demo-key-1"
+}
+
+PAYLOAD:
+{
+  "iss": "https://localhost:7300/",
+  "sub": "9f3c1a7e-5b28-4d6a-8e14-c07b2f9d3a51",
+  "aud": "https://api.campus-store.com",
+  "iat": 1705320000,
+  "exp": 1705323600,
+  "name": "Jane Smith",
+  "email": "jane.smith@nait.ca",
+  "email_verified": true,
+  "https://campus-store.com/claims/roles": ["Staff", "Inventory"],
+  "https://campus-store.com/claims/department": "Software Development",
+  "https://campus-store.com/claims/student_id": "200412345"
+}
+
+NOTES:
+- iat (issued at): 1705320000 = 2024-01-15 12:00:00 UTC (EXPIRED -- over 2 years ago)
+- exp (expires):   1705323600 = 2024-01-15 13:00:00 UTC (1 hour lifetime, long expired)
+- jwt.io displays timestamps in YOUR LOCAL timezone -- the dates above are UTC
+- Same user, same claims as valid-token.txt -- only the timestamps differ
+- Signature is a placeholder -- jwt.io will show "Invalid Signature" (expected for demo tokens)
+- To paste into jwt.io: copy ONLY the first line (the encoded token string, before the --- separator)

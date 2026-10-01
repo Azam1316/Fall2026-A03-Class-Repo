@@ -1,0 +1,10 @@
+@page "/products/{id:int}"
+
+<h3>Product Detail</h3>
+
+<p>Viewing product ID: <strong>@Id</strong></p>
+<a href="/products" class="btn btn-outline-primary">Back to Products</a>
+
+@code {
+    [Parameter] public int Id { get; set; }
+}

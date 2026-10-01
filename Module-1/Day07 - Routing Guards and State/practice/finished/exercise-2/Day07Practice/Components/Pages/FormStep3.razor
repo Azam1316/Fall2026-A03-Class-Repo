@@ -1,0 +1,54 @@
+@page "/form/step3"
+@using Fluxor
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+@inject IState<FormState> FormState
+@inject IDispatcher Dispatcher
+@inject NavigationManager Navigation
+
+<h3>Form Wizard -- Step 3 of 3</h3>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Confirmation</h5>
+        <p>Review your information and submit.</p>
+
+        <button class="btn btn-success" @onclick="Submit">
+            Submit Form
+        </button>
+    </div>
+</div>
+
+<div class="mt-3 text-muted">
+    Completed steps: @string.Join(", ", FormState.Value.CompletedSteps.Order())
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        // Practice 2: chained guards. Check the prerequisites in order — step 1 before step 2 —
+        // so a visitor with nothing done is sent STRAIGHT to the earliest gap.
+        //
+        // Reverse the two checks and they still end up on step 1, because step 2's own guard
+        // forwards them the rest of the way; they just take an extra hop to get there. The
+        // guards chain, so the destination is safe either way. Ordering them earliest-first is
+        // what makes one redirect do the work of two.
+        if (!FormState.Value.CompletedSteps.Contains(1))
+        {
+            Navigation.NavigateTo("/form/step1");
+            return;
+        }
+
+        if (!FormState.Value.CompletedSteps.Contains(2))
+        {
+            Navigation.NavigateTo("/form/step2");
+            return;
+        }
+    }
+
+    private void Submit()
+    {
+        Dispatcher.Dispatch(new CompleteStepAction(3));
+    }
+}

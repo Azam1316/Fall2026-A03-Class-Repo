@@ -1,0 +1,205 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|c:\\users\\jkarpiak.nait\\onedrive - nait\\documents\\courses\\2026\\fall\\sdev2351\\a03\\fall2026-a03-class-repo\\module-1\\day07 - routing guards and state\\demo\\starter\\day07demo\\components\\pages\\checkout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|solutionrelative:components\\pages\\checkout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|c:\\users\\jkarpiak.nait\\onedrive - nait\\documents\\courses\\2026\\fall\\sdev2351\\a03\\fall2026-a03-class-repo\\module-1\\day07 - routing guards and state\\demo\\starter\\day07demo\\features\\cart\\store\\cartstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|solutionrelative:features\\cart\\store\\cartstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|c:\\users\\jkarpiak.nait\\onedrive - nait\\documents\\courses\\2026\\fall\\sdev2351\\a03\\fall2026-a03-class-repo\\module-1\\day07 - routing guards and state\\demo\\starter\\day07demo\\components\\pages\\shop.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|solutionrelative:components\\pages\\shop.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|c:\\users\\jkarpiak.nait\\onedrive - nait\\documents\\courses\\2026\\fall\\sdev2351\\a03\\fall2026-a03-class-repo\\module-1\\day07 - routing guards and state\\demo\\starter\\day07demo\\services\\mockcartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|solutionrelative:services\\mockcartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|c:\\users\\jkarpiak.nait\\onedrive - nait\\documents\\courses\\2026\\fall\\sdev2351\\a03\\fall2026-a03-class-repo\\module-1\\day07 - routing guards and state\\demo\\starter\\day07demo\\services\\icartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|solutionrelative:services\\icartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|c:\\users\\jkarpiak.nait\\onedrive - nait\\documents\\courses\\2026\\fall\\sdev2351\\a03\\fall2026-a03-class-repo\\module-1\\day07 - routing guards and state\\demo\\starter\\day07demo\\features\\cart\\store\\cartfeature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|solutionrelative:features\\cart\\store\\cartfeature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|c:\\users\\jkarpiak.nait\\onedrive - nait\\documents\\courses\\2026\\fall\\sdev2351\\a03\\fall2026-a03-class-repo\\module-1\\day07 - routing guards and state\\demo\\starter\\day07demo\\features\\cart\\store\\cartreducers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|solutionrelative:features\\cart\\store\\cartreducers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|c:\\users\\jkarpiak.nait\\onedrive - nait\\documents\\courses\\2026\\fall\\sdev2351\\a03\\fall2026-a03-class-repo\\module-1\\day07 - routing guards and state\\demo\\starter\\day07demo\\features\\cart\\store\\cartactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|solutionrelative:features\\cart\\store\\cartactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|c:\\users\\jkarpiak.nait\\onedrive - nait\\documents\\courses\\2026\\fall\\sdev2351\\a03\\fall2026-a03-class-repo\\module-1\\day07 - routing guards and state\\demo\\starter\\day07demo\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|solutionrelative:models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|c:\\users\\jkarpiak.nait\\onedrive - nait\\documents\\courses\\2026\\fall\\sdev2351\\a03\\fall2026-a03-class-repo\\module-1\\day07 - routing guards and state\\demo\\starter\\day07demo\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F21362D3-F548-4E35-966F-0FC564DEB8E7}|Day07Demo.csproj|solutionrelative:components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CartFeature.cs",
+              "DocumentMoniker": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Features\\Cart\\Store\\CartFeature.cs",
+              "RelativeDocumentMoniker": "Features\\Cart\\Store\\CartFeature.cs",
+              "ToolTip": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Features\\Cart\\Store\\CartFeature.cs",
+              "RelativeToolTip": "Features\\Cart\\Store\\CartFeature.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T14:15:59.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CartState.cs",
+              "DocumentMoniker": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Features\\Cart\\Store\\CartState.cs",
+              "RelativeDocumentMoniker": "Features\\Cart\\Store\\CartState.cs",
+              "ToolTip": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Features\\Cart\\Store\\CartState.cs",
+              "RelativeToolTip": "Features\\Cart\\Store\\CartState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T14:15:56.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ICartService.cs",
+              "DocumentMoniker": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Services\\ICartService.cs",
+              "RelativeDocumentMoniker": "Services\\ICartService.cs",
+              "ToolTip": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Services\\ICartService.cs",
+              "RelativeToolTip": "Services\\ICartService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T14:15:55.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MockCartService.cs",
+              "DocumentMoniker": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Services\\MockCartService.cs",
+              "RelativeDocumentMoniker": "Services\\MockCartService.cs",
+              "ToolTip": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Services\\MockCartService.cs",
+              "RelativeToolTip": "Services\\MockCartService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T14:15:53.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Checkout.razor",
+              "DocumentMoniker": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Components\\Pages\\Checkout.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Checkout.razor",
+              "ToolTip": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Components\\Pages\\Checkout.razor",
+              "RelativeToolTip": "Components\\Pages\\Checkout.razor",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-15T13:38:36.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Shop.razor",
+              "DocumentMoniker": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Components\\Pages\\Shop.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Shop.razor",
+              "ToolTip": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Components\\Pages\\Shop.razor",
+              "RelativeToolTip": "Components\\Pages\\Shop.razor",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAACkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-15T14:16:19.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CartReducers.cs",
+              "DocumentMoniker": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Features\\Cart\\Store\\CartReducers.cs",
+              "RelativeDocumentMoniker": "Features\\Cart\\Store\\CartReducers.cs",
+              "ToolTip": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Features\\Cart\\Store\\CartReducers.cs",
+              "RelativeToolTip": "Features\\Cart\\Store\\CartReducers.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T14:15:57.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CartActions.cs",
+              "DocumentMoniker": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Features\\Cart\\Store\\CartActions.cs",
+              "RelativeDocumentMoniker": "Features\\Cart\\Store\\CartActions.cs",
+              "ToolTip": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Features\\Cart\\Store\\CartActions.cs",
+              "RelativeToolTip": "Features\\Cart\\Store\\CartActions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T14:16:00.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "Models\\CartItem.cs",
+              "ToolTip": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Models\\CartItem.cs",
+              "RelativeToolTip": "Models\\CartItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-21T16:05:40.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\jkarpiak.NAIT\\OneDrive - NAIT\\Documents\\Courses\\2026\\Fall\\SDEV2351\\A03\\Fall2026-A03-Class-Repo\\Module-1\\Day07 - Routing Guards and State\\Demo\\starter\\Day07Demo\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-15T14:16:17.13Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
