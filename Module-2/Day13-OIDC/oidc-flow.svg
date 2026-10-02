@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+<defs>
+<style>
+text { font-family: "Segoe UI", Arial, sans-serif; }
+.title { font-size: 26px; font-weight: bold; }
+.subtitle { font-size: 15px; font-style: italic; }
+.actor { font-size: 16px; font-weight: bold; }
+.actor-sub { font-size: 12px; font-style: italic; }
+.msg { font-size: 14px; }
+.msg-bold { font-size: 14px; font-weight: bold; }
+.step { font-size: 14px; font-weight: bold; }
+.code { font-family: Consolas, "Courier New", monospace; font-size: 13px; }
+.caption { font-size: 13px; font-style: italic; }
+.channel-lbl { font-size: 13px; font-weight: bold; }
+.band-title { font-size: 17px; font-weight: bold; }
+</style>
+<marker id="amber-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#F57F17"/></marker>
+<marker id="amber-arrow-start" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#F57F17"/></marker>
+<marker id="green-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2E7D32"/></marker>
+<marker id="green-arrow-start" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#2E7D32"/></marker>
+<marker id="red-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#B71C1C"/></marker>
+<marker id="red-arrow-start" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#B71C1C"/></marker>
+<marker id="navy-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#003366"/></marker>
+<marker id="navy-arrow-start" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M10,0 L0,5 L10,10 z" fill="#003366"/></marker>
+</defs>
+<rect x="0" y="0" width="1400" height="900" fill="#F5F7FA"/>
+<text x="700" y="40" text-anchor="middle" class="title" style="fill: #003366;">OIDC Authorization Code Flow with PKCE</text>
+<text x="700" y="66" text-anchor="middle" class="subtitle" style="fill: #4B5563;">Day 12 — how a user click becomes an authenticated session, front-channel vs back-channel</text>
+<line x1="40" y1="80" x2="1360" y2="80" stroke="#003366" stroke-width="2"/>
+<rect x="80" y="100" width="200" height="60" rx="8" ry="8" fill="#003366" stroke="#003366" stroke-width="2"/>
+<text x="180" y="128" text-anchor="middle" class="actor" style="fill: #FFFFFF;">User + Browser</text>
+<text x="180" y="146" text-anchor="middle" class="actor-sub" style="fill: #D4A843;">the person clicking things</text>
+<rect x="600" y="100" width="200" height="60" rx="8" ry="8" fill="#003366" stroke="#003366" stroke-width="2"/>
+<text x="700" y="128" text-anchor="middle" class="actor" style="fill: #FFFFFF;">Blazor App</text>
+<text x="700" y="146" text-anchor="middle" class="actor-sub" style="fill: #D4A843;">your code — has client_id, code_verifier</text>
+<rect x="1120" y="100" width="200" height="60" rx="8" ry="8" fill="#003366" stroke="#003366" stroke-width="2"/>
+<text x="1220" y="128" text-anchor="middle" class="actor" style="fill: #FFFFFF;">Identity Provider</text>
+<text x="1220" y="146" text-anchor="middle" class="actor-sub" style="fill: #D4A843;">CampusHub AuthServer — holds passwords</text>
+<line x1="180" y1="160" x2="180" y2="660" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="6,5"/>
+<line x1="700" y1="160" x2="700" y2="660" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="6,5"/>
+<line x1="1220" y1="160" x2="1220" y2="660" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="6,5"/>
+<rect x="610" y="172" width="280" height="40" rx="4" fill="#FFF8E1" stroke="#F57F17" stroke-width="1.5"/>
+<text x="750" y="189" text-anchor="middle" class="step" style="fill: #B35400;">PRE-STEP (PKCE)</text>
+<text x="750" y="206" text-anchor="middle" class="code" style="fill: #1F2937;">code_verifier = random; code_challenge = SHA256(verifier)</text>
+<line x1="195" y1="240" x2="698" y2="240" stroke="#F57F17" stroke-width="2.5" marker-end="url(#amber-arrow)"/>
+<text x="447" y="234" text-anchor="middle" class="msg-bold" style="fill: #B35400;">1. click “Login” button</text>
+<circle cx="60" cy="240" r="11" fill="#F57F17" stroke="#F57F17"/>
+<text x="60" y="244" text-anchor="middle" class="step" style="fill: #1F2937;">1</text>
+<line x1="698" y1="285" x2="197" y2="285" stroke="#003366" stroke-width="2.5" marker-end="url(#navy-arrow)"/>
+<text x="447" y="279" text-anchor="middle" class="msg" style="fill: #003366;">2. HTTP 302 → /authorize?code_challenge=xyz</text>
+<circle cx="60" cy="285" r="11" fill="#003366" stroke="#003366"/>
+<text x="60" y="289" text-anchor="middle" class="step" style="fill: #FFFFFF;">2</text>
+<line x1="195" y1="330" x2="1218" y2="330" stroke="#F57F17" stroke-width="2.5" marker-end="url(#amber-arrow)"/>
+<text x="700" y="324" text-anchor="middle" class="msg-bold" style="fill: #B35400;">3. browser follows redirect → enter credentials at IdP</text>
+<circle cx="60" cy="330" r="11" fill="#F57F17" stroke="#F57F17"/>
+<text x="60" y="334" text-anchor="middle" class="step" style="fill: #1F2937;">3</text>
+<rect x="1212" y="335" width="16" height="60" fill="#FFFFFF" stroke="#003366" stroke-width="2"/>
+<text x="1290" y="370" class="caption" style="fill: #4B5563;">verify password,</text>
+<text x="1290" y="386" class="caption" style="fill: #4B5563;">mint auth code</text>
+<line x1="1218" y1="415" x2="197" y2="415" stroke="#003366" stroke-width="2.5" marker-end="url(#navy-arrow)"/>
+<text x="700" y="409" text-anchor="middle" class="msg" style="fill: #003366;">4. HTTP 302 → /callback?code=abc123</text>
+<circle cx="60" cy="415" r="11" fill="#003366" stroke="#003366"/>
+<text x="60" y="419" text-anchor="middle" class="step" style="fill: #FFFFFF;">4</text>
+<line x1="195" y1="455" x2="698" y2="455" stroke="#003366" stroke-width="2.5" marker-end="url(#navy-arrow)"/>
+<text x="447" y="449" text-anchor="middle" class="msg" style="fill: #003366;">5. GET /callback?code=abc123</text>
+<circle cx="60" cy="455" r="11" fill="#003366" stroke="#003366"/>
+<text x="60" y="459" text-anchor="middle" class="step" style="fill: #FFFFFF;">5</text>
+<line x1="702" y1="500" x2="1218" y2="500" stroke="#2E7D32" stroke-width="2.5" marker-end="url(#green-arrow)"/>
+<text x="960" y="494" text-anchor="middle" class="msg-bold" style="fill: #2E7D32;">6. POST /token {code, code_verifier, client_id}</text>
+<circle cx="60" cy="500" r="11" fill="#2E7D32" stroke="#2E7D32"/>
+<text x="60" y="504" text-anchor="middle" class="step" style="fill: #FFFFFF;">6</text>
+<rect x="1212" y="505" width="16" height="45" fill="#FFFFFF" stroke="#2E7D32" stroke-width="2"/>
+<text x="1290" y="530" class="caption" style="fill: #4B5563;">verify code +</text>
+<text x="1290" y="546" class="caption" style="fill: #4B5563;">PKCE challenge</text>
+<line x1="1218" y1="575" x2="702" y2="575" stroke="#2E7D32" stroke-width="2.5" marker-end="url(#green-arrow)"/>
+<text x="960" y="569" text-anchor="middle" class="msg-bold" style="fill: #2E7D32;">7. { id_token, access_token, refresh_token }</text>
+<circle cx="60" cy="575" r="11" fill="#2E7D32" stroke="#2E7D32"/>
+<text x="60" y="579" text-anchor="middle" class="step" style="fill: #FFFFFF;">7</text>
+<line x1="698" y1="620" x2="197" y2="620" stroke="#003366" stroke-width="2.5" marker-end="url(#navy-arrow)"/>
+<text x="447" y="614" text-anchor="middle" class="msg" style="fill: #003366;">8. authenticated session – render protected UI</text>
+<circle cx="60" cy="620" r="11" fill="#003366" stroke="#003366"/>
+<text x="60" y="624" text-anchor="middle" class="step" style="fill: #FFFFFF;">8</text>
+<path d="M 22,275 L 12,275 L 12,465 L 22,465" stroke="#F57F17" stroke-width="2.5" fill="none"/>
+<text x="22" y="370" text-anchor="middle" class="channel-lbl" transform="rotate(-90, 22, 370)" style="fill: #B35400;">FRONT-CHANNEL (via browser)</text>
+<path d="M 22,492 L 12,492 L 12,595 L 22,595" stroke="#2E7D32" stroke-width="2.5" fill="none"/>
+<text x="22" y="543" text-anchor="middle" class="channel-lbl" transform="rotate(-90, 22, 543)" style="fill: #2E7D32;">BACK-CHANNEL</text>
+<line x1="40" y1="680" x2="1360" y2="680" stroke="#DEE2E6" stroke-width="1"/>
+<rect x="40" y="695" width="1320" height="185" rx="8" ry="8" fill="#FFFFFF" stroke="#DEE2E6" stroke-width="1"/>
+<text x="60" y="725" style="fill: #003366; font-size: 18px; font-weight: bold;">Key Rules — OIDC Authorization Code Flow with PKCE</text>
+<text x="60" y="752" style="fill: #1F2937; font-size: 14px;"><tspan style="fill: #F57F17; font-weight: bold;">Your app never sees the user’s password.</tspan> Credentials are entered on the IdP’s own login page (step 3) — the app only ever touches the authorization code and tokens.</text>
+<text x="60" y="777" style="fill: #1F2937; font-size: 14px;"><tspan style="fill: #2E7D32; font-weight: bold;">PKCE</tspan> protects the front-channel. An attacker who steals the authorization code still cannot exchange it for tokens without the <tspan class="code" style="fill: #003366;">code_verifier</tspan>, which never leaves the app.</text>
+<text x="60" y="802" style="fill: #1F2937; font-size: 14px;"><tspan style="fill: #003366; font-weight: bold;">Token split:</tspan> the <tspan style="fill: #003366; font-weight: bold;">id_token</tspan> identifies the user to the app; the <tspan style="fill: #003366; font-weight: bold;">access_token</tspan> authorizes API calls. Never mix them — use <tspan class="code" style="fill: #003366;">id_token</tspan> for UI, <tspan class="code" style="fill: #003366;">access_token</tspan> in the Authorization header.</text>
+<text x="60" y="827" style="fill: #1F2937; font-size: 14px;"><tspan style="font-weight: bold;">Front-channel</tspan> = passes through the browser (steps 2, 4, 5). <tspan style="font-weight: bold;">Back-channel</tspan> = direct HTTPS from app to IdP (steps 6, 7). The boundary is where PKCE earns its keep.</text>
+<text x="60" y="860" style="fill: #003366; font-size: 15px; font-weight: bold;">Today is concepts only. Tomorrow (Day 13) you will configure this against our own provider and see this exact flow in the Network tab.</text>
+</svg>

@@ -1,0 +1,25 @@
+@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>SDEV 2351 -- Day 13 Demo</h1>
+
+<p>Welcome to the OIDC Authentication demo. Use the navigation menu to explore:</p>
+
+<ul>
+    <li><strong>Login/Logout</strong> -- Authenticate with CampusHub</li>
+    <li><strong>Profile</strong> -- View your claims after login</li>
+</ul>
+
+<AuthorizeView>
+    <Authorized>
+        <div class="alert alert-success">
+            <strong>Authenticated!</strong> You are logged in as @context.User.Identity?.Name.
+        </div>
+    </Authorized>
+    <NotAuthorized>
+        <div class="alert alert-info">
+            You are not logged in. Click <strong>Login</strong> in the navigation menu to authenticate with CampusHub.
+        </div>
+    </NotAuthorized>
+</AuthorizeView>

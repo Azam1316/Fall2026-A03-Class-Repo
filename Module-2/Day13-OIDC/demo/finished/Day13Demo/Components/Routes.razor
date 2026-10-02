@@ -1,0 +1,21 @@
+@* CascadingAuthenticationState wraps the whole router so every component below it
+   can read the current user (via a [CascadingParameter] Task<AuthenticationState>),
+   without auth state being passed down manually -- the auth counterpart to how
+   Fluxor cascaded IState<T> in Module 1. AddCascadingAuthenticationState() in
+   Program.cs is what supplies it. *@
+<CascadingAuthenticationState>
+    <Router AppAssembly="typeof(Program).Assembly">
+        <Found Context="routeData">
+            @* AuthorizeRouteView, NOT the plain RouteView: it's the variant that
+               honours [Authorize] on a page and renders the Authorizing template
+               below while the auth state is still resolving. *@
+            <AuthorizeRouteView RouteData="routeData"
+                                DefaultLayout="typeof(Layout.MainLayout)">
+                <Authorizing>
+                    <p>Checking authorization...</p>
+                </Authorizing>
+            </AuthorizeRouteView>
+            <FocusOnNavigate RouteData="routeData" Selector="h1" />
+        </Found>
+    </Router>
+</CascadingAuthenticationState>

@@ -1,0 +1,6 @@
+wwwroot\app.css
+C:\Users\jkarpiak.NAIT\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.5\build\..\_framework\blazor.web.js
+C:\Users\jkarpiak.NAIT\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.5\build\..\_framework\blazor.server.js
+C:\Users\jkarpiak.NAIT\OneDrive - NAIT\Documents\Courses\Completed Prep\SDEV2351\course-repo\SDEV2351\SDEV2351_SourceCode\Day-13\finished\exercise-2\Day13Practice\wwwroot\app.css
+C:\Users\jkarpiak.NAIT\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.5\_framework\blazor.web.js
+C:\Users\jkarpiak.NAIT\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.5\_framework\blazor.server.js

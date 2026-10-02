@@ -1,0 +1,62 @@
+@page "/profile"
+@using System.Security.Claims
+
+<PageTitle>My Profile</PageTitle>
+
+<h1>My Profile</h1>
+
+@if (isAuthenticated)
+{
+    <p>Welcome, <strong>@userName</strong>!</p>
+
+    <h2>Your Claims</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr><th>Type</th><th>Value</th><th>Issuer</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var claim in claims)
+            {
+                <tr>
+                    <td><code>@claim.Type</code></td>
+                    <td>@claim.Value</td>
+                    <td>@claim.Issuer</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning">
+        Please <a href="/Account/Login?returnUrl=/profile">log in</a> to view your profile.
+    </div>
+}
+
+@code {
+    // Auth state cascades in as a Task<AuthenticationState> (not a plain
+    // AuthenticationState) because resolving the user can be async -- await it once
+    // to get the current snapshot. Supplied by CascadingAuthenticationState in
+    // Routes.razor.
+    [CascadingParameter]
+    private Task<AuthenticationState> AuthState { get; set; } = default!;
+
+    private bool isAuthenticated;
+    private string userName = "";
+    private IEnumerable<Claim> claims = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Await unwraps the user; user.Claims is the full set the provider returned.
+        var authState = await AuthState;
+        var user = authState.User;
+
+        isAuthenticated = user.Identity?.IsAuthenticated ?? false;
+
+        if (isAuthenticated)
+        {
+            userName = user.Identity?.Name ?? "Unknown";
+            claims = user.Claims;
+        }
+    }
+}

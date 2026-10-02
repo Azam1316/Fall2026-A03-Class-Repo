@@ -1,0 +1,38 @@
+<div class="top-row ps-3 navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">Day 13 Demo</a>
+    </div>
+</div>
+
+<nav class="flex-column text-light" >
+    <div class="nav-item px-3 py-2">
+        <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+            Home
+        </NavLink>
+    </div>
+    <div class="nav-item px-3 py-2">
+        <NavLink class="nav-link" href="profile">
+            Profile
+        </NavLink>
+    </div>
+
+    <hr class="mx-3 my-2" />
+
+    <div class="nav-item px-3 py-2">
+        @* AuthorizeView renders the <Authorized> or <NotAuthorized> branch based on
+           the cascaded auth state -- no manual if/else against the user. `context`
+           is the AuthenticationState, so context.User.Identity?.Name is the logged-in
+           name (populated because NameClaimType = "name" in Program.cs).
+           The Login/Logout links point at the /Account/* minimal-API endpoints, NOT
+           Blazor routes -- login needs a real HTTP redirect out to the provider (see Program.cs). *@
+        <AuthorizeView>
+            <Authorized>
+                <span class="nav-link text-light">Hello, @context.User.Identity?.Name</span>
+                <a class="nav-link" href="/Account/Logout">Logout</a>
+            </Authorized>
+            <NotAuthorized>
+                <a class="nav-link" href="/Account/Login">Login</a>
+            </NotAuthorized>
+        </AuthorizeView>
+    </div>
+</nav>
